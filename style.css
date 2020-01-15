@@ -122,6 +122,10 @@ a:hover {
 	#profile_chk:checked ~ .profile {
 		left: 0;
 	}
+	.article_wrapper {
+		grid-template-columns: 1fr;
+		padding: 0 2rem;
+	}
 }
 
 @media screen and (min-width: 801px) {
@@ -130,6 +134,10 @@ a:hover {
 		transform: translate(-50%, -50%);
 		z-index: 999;
 		border: black 2px solid;
+	}
+	.article_wrapper {
+		grid-template-columns: 1fr 1fr;
+		padding: 0 4rem;
 	}
 }
 
@@ -160,4 +168,13 @@ a:hover {
 	display: flex;
 	flex-direction: row;
 	justify-content: flex-end;
+}
+
+.article_wrapper {
+	display: grid;
+	grid-auto-rows: minmax(12rem, 15rem);
+	grid-gap: 1rem 2rem;
+}
+.article_wrapper article {
+	overflow: hidden;
 }
