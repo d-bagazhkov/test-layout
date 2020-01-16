@@ -78,6 +78,11 @@ a:hover {
 	padding: 0 .8rem;
 }
 
+.article_wrapper {
+	grid-template-columns: 1fr;
+	padding: 0 2rem;
+}
+
 @media screen and (max-width: 800px) {
 	.navigation .menu_icon {
 		display: block;
@@ -123,10 +128,6 @@ a:hover {
 	#profile_chk:checked ~ .profile {
 		left: 0;
 	}
-	.article_wrapper {
-		grid-template-columns: 1fr;
-		padding: 0 2rem;
-	}
 }
 
 @media screen and (min-width: 801px) {
@@ -136,6 +137,9 @@ a:hover {
 		z-index: 999;
 		border: black 2px solid;
 	}
+}
+
+@media screen and (min-width: 1000px) {
 	.article_wrapper {
 		grid-template-columns: 1fr 1fr;
 		padding: 0 4rem;
@@ -178,6 +182,7 @@ a:hover {
 }
 .article_wrapper article {
 	overflow: hidden;
+	position: relative;
 }
 .article_wrapper article .content {
 	font-size: 1.1rem;
@@ -189,4 +194,39 @@ a:hover {
 	-webkit-text-fill-color: transparent;
 	color: black;
 	background-image: linear-gradient(to bottom, black 9rem, transparent, transparent);
+}
+.article_info {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	width: 100%;
+	padding: .4rem;
+	position: absolute;
+	bottom:  0;
+}
+.article_info .article_tags {
+	display: flex;
+	flex-direction: row;
+}
+
+.article_info .article_tags li {
+	display: block;
+	margin: 0 .2rem;
+	text-decoration: none;
+}
+.article_info .article_tags li::before {
+	content:'#';
+}
+
+article h2 {
+	margin: .1rem 3rem .3rem 3rem;
+}
+
+article p {
+	text-align: justify;
+	margin-bottom: .4rem;
+}
+
+article p::first-letter {
+	margin-left: 2rem;
 }
