@@ -1,6 +1,7 @@
 * {
 	margin: 0;
 	padding: 0;
+	box-sizing: border-box;
 }
 
 a {
@@ -172,9 +173,20 @@ a:hover {
 
 .article_wrapper {
 	display: grid;
-	grid-auto-rows: minmax(12rem, 15rem);
+	grid-auto-rows: minmax(12rem, 18rem);
 	grid-gap: 1rem 2rem;
 }
 .article_wrapper article {
 	overflow: hidden;
+}
+.article_wrapper article .content {
+	font-size: 1.1rem;
+	height: 100%;
+	background-clip: text;
+	-webkit-background-clip: text;
+ 	-moz-background-clip: text;
+
+	-webkit-text-fill-color: transparent;
+	color: black;
+	background-image: linear-gradient(to bottom, black 9rem, transparent, transparent);
 }
