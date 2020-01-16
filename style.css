@@ -23,7 +23,8 @@ a:hover {
 .open-menu-icon:hover, 
 .close-menu-icon:hover, 
 .open-profile-icon:hover,
-.close-profile-icon:hover {
+.close-profile-icon:hover,
+.article-full-icon:hover {
 	color: #d35400;
 	cursor: pointer;
 }
@@ -157,9 +158,18 @@ a:hover {
 		z-index: 9999;
 		border-radius: 0;
 	}
+	
+	.close-profile-icon {
+		position: absolute;
+		top: 3rem;
+		right: 3rem;
+		font-size: 2.5rem;
+	}
+
 	#profile-chk:checked ~ .profile-page {
 		left: 0;
 	}
+	
 }
 /* end Mobile profile */
 /* Not-mobile profile */
@@ -286,15 +296,30 @@ article p::first-letter {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
+	align-items: center;
 	width: 100%;
 	padding: .4rem;
 	position: absolute;
 	bottom:  0;
+	font-weight: 900;
+	font-size: 1.1rem;
+}
+
+.article-full-icon {
+	position: absolute;
+	bottom: 1.5rem;
+	font-size: 1.5rem;
+	color: #34495e;
+	left: 50%;
+	transform: translateX(-50%);
 }
 
 .article-info .article-tags {
 	display: flex;
 	flex-direction: row;
+	align-items: center;
+	overflow: hidden;
+	flex: center;
 }
 
 .article-info .article-tags li {
@@ -306,6 +331,44 @@ article p::first-letter {
 .article-info .article-tags li::before {
 	content: '#';
 }
+/* Media query article info */
+/* Small mobile article info */
+@media screen and (max-width: 450px) {
+	.article-info .article-tags {
+		position: absolute;
+		left: 50%;
+		transform: translateX(-50%);
+		top: 2rem;
+	}
+	.article-info {
+		bottom: 1.3rem;
+	}
+}
+/* end Small mobile article info */
+/* Very small mobile article info */
+@media screen and (max-width: 450px) {
+	.article-info {
+		bottom: 4rem;
+	}
+	.article-info .article-tags {
+		position: absolute;
+		left: 0;
+		transform: none;
+		top: 1.6rem;
+	}
+	.article-info .article-date {
+		position: absolute;
+		left: 0;
+		transform: none;
+		top: 3.7rem;
+	}
+	.article-full-icon {
+		position: absolute;
+		left: calc(100% - 3rem);
+	}
+}
+/* end Very small mobile article info */
+/* end Media query article info */
 /* end Article info */
 /* Media query article */
 /* Mobile article */
@@ -315,6 +378,17 @@ article p::first-letter {
 	}
 }
 /* end Mobile article */
+/* Very small mobile article info */
+@media screen and (max-width: 450px) {
+	.article-wrapper {
+		grid-auto-rows: minmax(15rem, 25rem);
+	}
+	.article-author {
+		position: absolute;
+		left: 0;
+	}
+}
+/* end Very small mobile article info */
 /* Not-mobile article */
 @media screen and (min-width: 801px) {
 	.article-wrapper article .content {
